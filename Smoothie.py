@@ -14,7 +14,8 @@ class Smoothie:
     #the ratio of frozen fruit to total smoothie volume in an ideal smoothie
     #the ideal smoothie is made up of 5/9ths fruit, 4/9ths juice (discovered through testing)
     fruitVR = (5/9)
-    juiceVR = (4/9)
+    juiceVR = (1 - fruitVR)
+    #conversion from ounces to milliliters
     OZ2ML = 29.57
 
     def changeSize(self, newSize):
@@ -33,7 +34,9 @@ class Smoothie:
 
         self.fruitNumber = 0
         self.juiceNumber = 0
+        #finds the number of fruits and juices in the smoothie
         for item in self.itemList:
+            #for some reason i have to instantiate the item. python not my forte
             item = item()
             self.theType = item.getType()
             if self.theType == TYPE.FRUIT:
@@ -54,6 +57,7 @@ class Smoothie:
         #then calculating the nutrition data using the fruits weight in grams out of 100
         #(the nutrition data in the .csv is based on 100g)
         for item in self.itemList:
+            # for some reason i have to instantiate the item. python not my forte
             item = item()
             self.tempNut = item.getNutInfo()
             self.tempDensity = item.getDensity()
@@ -68,4 +72,4 @@ class Smoothie:
             self.totalCal += (self.tempNut[0] * self.weightR)
             self.totalSugar +=(self.tempNut[1] * self.weightR)
 
-        print('Total kCal: ', self.totalCal, ' , Total Sugar: ', self.totalSugar, 'g')
+        print('Total kCal: ', self.totalCal, ', Total Sugar: ', self.totalSugar, 'g', sep='')

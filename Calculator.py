@@ -4,7 +4,7 @@ from Item import *
 class Calculator:
     def run(self):
         s = Smoothie()
-        s.changeSize(SIZE.LARGE)
+        s.changeSize(SIZE.MEDIUM)
 
         s.addItem(Banana)
         s.addItem(AppleJuice)
