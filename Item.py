@@ -44,24 +44,18 @@ class Banana(Item):
         self._type = TYPE.FRUIT
         self._name = 'Banana'
         self._density = 0.95
-        self.tempNut = self.readNutData(self._name)
-
-        self._nutritionInfo = self.tempNut
+        self._nutritionInfo = self.readNutData(self._name)
 
 class Strawberry(Item):
     def __init__(self):
         self._type = TYPE.FRUIT
         self._name = 'Strawberry'
         self._density = 0.93
-        self.tempNut = self.readNutData(self._name)
-
-        self._nutritionInfo = self.tempNut
+        self._nutritionInfo = self.readNutData(self._name)
 
 class AppleJuice(Item):
     def __init__(self):
         self._type = TYPE.JUICE
         self._name = 'Apple Juice'
         self._density = 1.04
-        self.tempNut = self.readNutData(self._name)
-
-        self._nutritionInfo = self.tempNut
+        self._nutritionInfo = self.readNutData(self._name)
